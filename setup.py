@@ -9,7 +9,6 @@ install_requires = [
     'boto3',
     'bottle',
     'Pillow',
-    'pyproj',
     'requests>=1.0',
     'redis>=2',
     'six',

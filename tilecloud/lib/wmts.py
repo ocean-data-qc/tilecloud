@@ -1,7 +1,6 @@
 from math import ceil
 
 from bottle import jinja2_template
-from pyproj import Proj, transform
 from six import iteritems
 
 from tilecloud.lib.wmts_get_capabilities_template import wmts_get_capabilities_template
@@ -15,8 +14,7 @@ METERS_PER_UNIT = {
 
 
 def to_wsg84(srs, x, y):
-    return transform(Proj(init=srs.lower()),
-                     Proj(proj="latlong", datum="WGS84"), x, y)
+    raise RuntimeError("pyproj dependency removed, so no transformations capability")
 
 
 def matrix_sets(tile_matrix_set):
